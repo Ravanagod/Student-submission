@@ -1,0 +1,40 @@
+<h2>Student Submissions</h2>
+
+<table>
+
+<tr>
+<th>Student</th>
+<th>File</th>
+<th>Grade</th>
+<th>Actions</th>
+</tr>
+
+{% for s in submissions %}
+
+<tr>
+
+<td>{{s.student_name}}</td>
+
+<td>
+<a href="/download/{{s.id}}">Download</a>
+</td>
+
+<td>{{s.grade}}</td>
+
+<td>
+
+<form action="/grade/{{s.id}}" method="post">
+
+<input type="text" name="grade" placeholder="Grade">
+
+<button>Submit</button>
+
+</form>
+
+</td>
+
+</tr>
+
+{% endfor %}
+
+</table>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<title>Student Assignment Portal</title>
+<link rel="stylesheet" href="/static/style.css">
+
+</head>
+
+<body>
+
+<h1>Student Assignment Portal</h1>
+
+<h3>Total Assignments: {{ assignments|length }}</h3>
+
+<div class="assignment-grid">
+
+{% for a in assignments %}
+
+<div class="assignment-card">
+
+<h3>{{ a.title }}</h3>
+
+<p>{{ a.description }}</p>
+
+<p>Deadline: {{ a.deadline }}</p>
+
+<form action="/submit" method="post" enctype="multipart/form-data">
+
+<input type="hidden" name="assignment_id" value="{{ a.id }}">
+
+<input type="text" name="student_name" placeholder="Your Name">
+
+<input type="file" name="file">
+
+<button type="submit">Submit Assignment</button>
+
+</form>
+
+</div>
+
+{% endfor %}
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>Teacher Dashboard</title>
+
+<link rel="stylesheet" href="/static/style.css">
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+</head>
+
+<body>
+
+<nav>
+
+<div class="logo">SMART CAMPUS</div>
+
+<ul>
+<li>Dashboard</li>
+<li>Assignments</li>
+<li><a href="/analytics">Analytics</a></li>
+</ul>
+
+</nav>
+
+<div class="dashboard-card">
+
+<h2>Teacher Dashboard</h2>
+
+<form action="/create_assignment" method="post" class="assignment-form">
+
+<input type="text" name="title" placeholder="Assignment Title">
+
+<input type="text" name="description" placeholder="Description">
+
+<input type="date" name="deadline">
+
+<button>Create</button>
+
+</form>
+
+<div class="chart-box">
+
+<h3>Assignment Statistics</h3>
+
+<canvas id="chart"></canvas>
+
+</div>
+
+</div>
+
+<script>
+
+const ctx = document.getElementById('chart');
+
+new Chart(ctx, {
+
+type: 'bar',
+
+data: {
+
+labels: ['Submitted','Pending','Late'],
+
+datasets: [{
+label:'Assignment Stats',
+data:[10,4,2],
+backgroundColor:[
+'#00e0ff',
+'#ffcc00',
+'#ff4d4d'
+]
+
+}]
+
+},
+
+options:{
+responsive:true,
+plugins:{
+legend:{
+labels:{color:'white'}
+}
+},
+scales:{
+x:{ticks:{color:'white'}},
+y:{ticks:{color:'white'}}
+}
+
+}
+
+});
+
+</script>
+
+</body>
+
+</html>
