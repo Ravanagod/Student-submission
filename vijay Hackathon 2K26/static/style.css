@@ -1,0 +1,414 @@
+body{
+margin:0;
+font-family:Arial;
+height:100vh;
+
+background:linear-gradient(120deg,#1e3c72,#2a5298);
+
+display:flex;
+flex-direction:column;
+align-items:center;
+justify-content:center;
+color:white;
+}
+
+/* Navigation */
+
+nav{
+position:absolute;
+top:20px;
+width:90%;
+display:flex;
+justify-content:space-between;
+align-items:center;
+}
+
+nav ul{
+display:flex;
+list-style:none;
+gap:30px;
+}
+
+nav li{
+cursor:pointer;
+}
+
+/* Glass login box */
+
+.login-container{
+
+width:380px;
+padding:40px;
+
+background:rgba(255,255,255,0.1);
+
+backdrop-filter:blur(20px);
+
+border-radius:20px;
+
+box-shadow:0 15px 40px rgba(0,0,0,0.4);
+
+text-align:center;
+
+transform:perspective(1000px) rotateX(5deg);
+
+}
+
+/* Inputs */
+
+input{
+
+width:100%;
+padding:12px;
+margin:10px 0;
+
+border:none;
+border-radius:8px;
+
+background:rgba(255,255,255,0.2);
+color:white;
+
+}
+
+/* Button */
+
+button{
+
+width:100%;
+padding:12px;
+
+background:linear-gradient(90deg,#00c6ff,#0072ff);
+
+border:none;
+border-radius:8px;
+
+color:white;
+font-size:16px;
+
+cursor:pointer;
+
+margin-top:10px;
+
+}
+
+/* Options */
+
+.options{
+
+display:flex;
+justify-content:space-between;
+font-size:12px;
+
+}
+
+/* Register */
+
+.register{
+color:#00e0ff;
+cursor:pointer;
+}
+
+.login-container:hover{
+
+transform:perspective(1000px) rotateX(0deg) scale(1.05);
+
+transition:0.4s;
+
+}
+
+/* Dashboard card */
+
+.dashboard-card{
+
+width:650px;
+
+margin-top:120px;
+
+padding:40px;
+
+background:rgba(255,255,255,0.1);
+
+backdrop-filter:blur(20px);
+
+border-radius:20px;
+
+box-shadow:0 20px 40px rgba(0,0,0,0.4);
+
+text-align:center;
+
+}
+
+/* Assignment form */
+
+.assignment-form{
+
+display:flex;
+
+gap:10px;
+
+justify-content:center;
+
+margin-bottom:20px;
+
+}
+
+.assignment-form input{
+
+padding:10px;
+
+border:none;
+
+border-radius:8px;
+
+background:rgba(255,255,255,0.2);
+
+color:white;
+
+width:150px;
+
+}
+
+.assignment-form button{
+
+padding:10px 20px;
+
+border:none;
+
+border-radius:8px;
+
+background:linear-gradient(90deg,#00c6ff,#0072ff);
+
+color:white;
+
+cursor:pointer;
+
+}
+
+/* Chart box */
+
+.chart-box{
+
+margin-top:20px;
+
+padding:20px;
+
+background:rgba(255,255,255,0.05);
+
+border-radius:15px;
+
+}
+
+/* Hover effect */
+
+.dashboard-card:hover{
+
+transform:scale(1.02);
+
+transition:0.4s;
+
+}
+
+/* Student dashboard */
+
+.student-dashboard{
+
+margin-top:120px;
+
+width:1000px;
+
+text-align:center;
+
+}
+
+/* Grid layout */
+
+.assignment-grid{
+
+display:grid;
+
+grid-template-columns:repeat(3,1fr);
+
+gap:20px;
+
+margin-top:30px;
+
+}
+
+/* Assignment card */
+
+.assignment-card{
+
+padding:25px;
+
+background:rgba(255,255,255,0.1);
+
+backdrop-filter:blur(15px);
+
+border-radius:15px;
+
+box-shadow:0 10px 30px rgba(0,0,0,0.4);
+
+color:white;
+
+transition:0.3s;
+
+}
+
+/* Hover effect */
+
+.assignment-card:hover{
+
+transform:translateY(-8px) scale(1.02);
+
+}
+
+/* Deadline text */
+
+.deadline{
+
+color:#ffd700;
+
+}
+
+/* Timer */
+
+.timer{
+
+margin:10px 0;
+
+color:#00e0ff;
+
+font-weight:bold;
+
+}
+
+/* Inputs */
+
+.assignment-card input{
+
+width:100%;
+
+padding:8px;
+
+margin-top:8px;
+
+border:none;
+
+border-radius:6px;
+
+}
+
+/* Submit button */
+
+.assignment-card button{
+
+margin-top:10px;
+
+padding:10px;
+
+border:none;
+
+border-radius:8px;
+
+background:linear-gradient(90deg,#00c6ff,#0072ff);
+
+color:white;
+
+cursor:pointer;
+
+width:100%;
+
+}
+/* Stats cards */
+
+.stats{
+display:flex;
+gap:20px;
+justify-content:center;
+margin-bottom:30px;
+}
+
+.stat-card{
+padding:20px;
+background:rgba(255,255,255,0.15);
+border-radius:10px;
+width:150px;
+text-align:center;
+}
+
+/* AI alert */
+
+.ai-alert{
+color:#ffd700;
+font-size:13px;
+margin-bottom:10px;
+}
+
+/* Progress bar */
+
+.progress{
+width:100%;
+height:8px;
+background:#ddd;
+border-radius:10px;
+margin-top:10px;
+}
+
+.progress-bar{
+height:8px;
+width:0%;
+background:#00e0ff;
+border-radius:10px;
+}
+
+/* File preview */
+
+.preview{
+font-size:12px;
+margin-top:5px;
+}
+
+/* Leaderboard */
+
+.leaderboard{
+margin-top:40px;
+text-align:center;
+}
+
+.leaderboard table{
+margin:auto;
+width:400px;
+border-collapse:collapse;
+}
+
+.leaderboard th,
+.leaderboard td{
+padding:10px;
+border-bottom:1px solid white;
+}
+.assignment-grid{
+display:flex;
+gap:30px;
+flex-wrap:wrap;
+justify-content:center;
+}
+
+.assignment-card{
+background:#4f6695;
+padding:30px;
+border-radius:20px;
+width:280px;
+text-align:center;
+box-shadow:0 10px 25px rgba(0,0,0,0.2);
+}
+
+.admin-buttons button{
+margin-top:10px;
+width:100%;
+padding:10px;
+border:none;
+border-radius:10px;
+background:linear-gradient(90deg,#55c1ff,#3b7bff);
+color:white;
+cursor:pointer;
+}

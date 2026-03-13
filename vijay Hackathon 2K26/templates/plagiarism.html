@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<title>Plagiarism Report</title>
+
+<link rel="stylesheet" href="/static/style.css">
+
+<style>
+
+body{
+background: linear-gradient(135deg,#243B55,#141E30);
+color:white;
+font-family:Arial;
+text-align:center;
+}
+
+.container{
+width:70%;
+margin:auto;
+margin-top:60px;
+background:rgba(255,255,255,0.05);
+padding:30px;
+border-radius:10px;
+}
+
+table{
+width:100%;
+margin-top:20px;
+border-collapse:collapse;
+}
+
+th,td{
+padding:12px;
+border:1px solid rgba(255,255,255,0.2);
+}
+
+th{
+background:#00c6ff;
+color:black;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>Plagiarism Report</h1>
+
+{% if message %}
+<p>{{message}}</p>
+{% endif %}
+
+<table>
+
+<tr>
+<th>Submission 1</th>
+<th>Submission 2</th>
+<th>Similarity %</th>
+</tr>
+
+{% for r in results %}
+<tr>
+<td>{{r.submission1}}</td>
+<td>{{r.submission2}}</td>
+<td>{{r.similarity}}</td>
+</tr>
+{% endfor %}
+
+</table>
+
+</div>
+
+</body>
+</html>

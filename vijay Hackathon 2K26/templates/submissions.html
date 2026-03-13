@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<title>Student Submissions</title>
+
+<link rel="stylesheet" href="/static/style.css">
+
+<style>
+
+body{
+background: linear-gradient(135deg,#243B55,#141E30);
+font-family: Arial;
+color:white;
+margin:0;
+}
+
+.container{
+width:80%;
+margin:auto;
+margin-top:60px;
+background:rgba(255,255,255,0.05);
+padding:30px;
+border-radius:12px;
+box-shadow:0 10px 30px rgba(0,0,0,0.4);
+}
+
+h1{
+text-align:center;
+margin-bottom:30px;
+}
+
+table{
+width:100%;
+border-collapse:collapse;
+margin-top:20px;
+}
+
+th,td{
+padding:14px;
+text-align:center;
+border-bottom:1px solid rgba(255,255,255,0.2);
+}
+
+th{
+background:#5ac8fa;
+color:black;
+}
+
+tr:hover{
+background:rgba(255,255,255,0.05);
+}
+
+.download-btn{
+background:#4facfe;
+padding:8px 16px;
+border-radius:6px;
+color:white;
+text-decoration:none;
+}
+
+.grade-input{
+padding:8px;
+border-radius:6px;
+border:none;
+}
+
+.submit-btn{
+background:#2ecc71;
+border:none;
+padding:8px 16px;
+border-radius:6px;
+cursor:pointer;
+font-weight:bold;
+color:white;
+}
+
+.submit-btn:hover{
+background:#27ae60;
+}
+
+.grade-text{
+color:#ffd54f;
+font-weight:bold;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>Student Submissions</h1>
+
+<table>
+
+<tr>
+<th>Student</th>
+<th>File</th>
+<th>Grade</th>
+<th>Actions</th>
+</tr>
+
+{% for s in submissions %}
+
+<tr>
+
+<td>{{ s.student_name }}</td>
+
+<td>
+<a class="download-btn" href="/download/{{ s.id }}">Download</a>
+</td>
+
+<td class="grade-text">
+{{ s.grade }}
+</td>
+
+<td>
+
+<form action="/grade/{{ s.id }}" method="post">
+
+<input class="grade-input" type="text" name="grade" placeholder="Enter Grade">
+
+<button class="submit-btn">Submit</button>
+
+</form>
+
+</td>
+
+</tr>
+
+{% endfor %}
+
+</table>
+
+</div>
+
+</body>
+</html>

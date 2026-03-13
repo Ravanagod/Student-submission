@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <title>Teacher Dashboard</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+
+<body>
+
+<nav style="padding:20px;background:#2c3e50;color:white;display:flex;justify-content:space-between">
+    <h2>SMART CAMPUS</h2>
+    <div>
+        <a href="/analytics" style="color:white;margin-right:20px">Analytics</a>
+        <a href="/logout" style="color:white">Logout</a>
+    </div>
+</nav>
+
+<div style="padding:40px">
+
+<h2>Create Assignment</h2>
+
+<form action="/create_assignment" method="post">
+
+<input type="text" name="title" placeholder="Title" required><br><br>
+
+<input type="text" name="description" placeholder="Description" required><br><br>
+
+<input type="date" name="deadline" required><br><br>
+
+<button type="submit">Create Assignment</button>
+
+</form>
+
+<hr><br>
+
+<h2>Manage Assignments</h2>
+
+<div style="display:grid;grid-template-columns:repeat(3,1fr);gap:20px">
+
+{% for a in assignments %}
+
+<div style="padding:20px;border-radius:10px;background:#e9eef5">
+
+<h3>{{ a.title }}</h3>
+
+<p>{{ a.description }}</p>
+
+<p><b>Deadline:</b> {{ a.deadline }}</p>
+
+<br>
+
+<a href="/edit-assignment/{{a.id}}">
+<button>Edit</button>
+</a>
+
+<a href="/delete-assignment/{{a.id}}">
+<button>Delete</button>
+</a>
+
+<a href="/submissions/{{a.id}}">
+<button>View Submissions</button>
+</a>
+
+<a href="/plagiarism/{{a.id}}">
+<button>Check Plagiarism</button>
+</a>
+
+</div>
+
+{% endfor %}
+
+</div>
+
+</div>
+
+</body>
+</html>
